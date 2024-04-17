@@ -1,16 +1,28 @@
 'use strict';
 
-// Get the button element
 let addButton = document.getElementById("Add");
+let removeButton = document.getElementById("Remove");
 
-// Add an event listener to the button
 addButton.addEventListener("click", addTask);
+removeButton.addEventListener("click", removeTask);
 
-// Function to execute when the button is clicked
 function addTask() {
   // Get the element where you want to add the task
-  let tasksElement = document.getElementById("Tasks");
+  let tasksElement = document.getElementById("tasks");
 
-  // Set the innerHTML of the tasks element to some text (replace "text" with the text you want to add)
-  tasksElement.innerHTML = "New Task Added!";
+  let task = prompt("Enter task:");
+
+  let newTaskElement = document.createElement("li");
+
+  newTaskElement.textContent = task;
+
+  tasksElement.appendChild(newTaskElement);
+}
+
+
+function removeTask() {
+  // Get the tasks element
+  let tasksElement = document.getElementById("tasks");
+
+  tasksElement.innerHTML = "";
 }
