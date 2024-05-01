@@ -1,39 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+25&display=swap');
 
-/* Primary: Shovel Knight
---primary-100: #F2F9FF;
---primary-200: #C4E7FF;
---primary-300: #95D9FD;
---primary-400: #66CEF9;
---primary-500: #37C5F0;
---primary-600: #16A0BD;
---primary-700: #087C8B;
---primary-800: #035459;
---primary-900: #012626;
-*/
-/* Accent: Bright Sun
---accent-100: #FFFFF2;
---accent-200: #FFF9C2;
---accent-300: #FDEC90;
---accent-400: #F7D85E;
---accent-500: #EDBA2D;
---accent-600: #BB830F;
---accent-700: #8A5603;
---accent-800: #583100;
---accent-900: #261300;
-*/
-/* Neutral
---neutral-100: #FAFBFC;
---neutral-200: #E7E9EB;
---neutral-300: #D3D7DA;
---neutral-400: #C1C6C9;
---neutral-500: #AEB5B8;
---neutral-600: #8A9193;
---neutral-700: #676D6F;
---neutral-800: #444A4B;
---neutral-900: #222626;
-*/
-*{
-    padding: 0;
-    margin: 0;
-    background-color: green;
-  }
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: #10A6BF;
+  color: #F2F9FF;
+  padding: 10px;
+  font-family: bebas-neue, sans-serif;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+.navbar a {
+  background-color: #10A6BF;
+  text-decoration: none;
+  color: #F2F9FF;
+  padding: 10px;
+  transition: background-color 0.3s ease; /* Adding a smooth transition */
+}
+
+.navbar a:hover {
+  background-color: #087C8B; /* Changing background color on hover */
+}
+
+.navbar {
+  width: 100%;
+}
+
