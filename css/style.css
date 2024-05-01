@@ -32,8 +32,42 @@
 --neutral-800: #444A4B;
 --neutral-900: #222626;
 */
+
 *{
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #10A6BF;
+    color: #F2F9FF;
+    padding: 10px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.navbar a {
+    background-color: #10A6BF;
+    text-decoration: none;
+    color: #F2F9FF;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Adding a smooth transition */
+}
+
+.navbar a:hover {
+    background-color: #087C8B; /* Changing background color on hover */
+}
+
+.navbar {
+    width: 100%;
 }
 
