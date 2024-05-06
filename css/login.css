@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+25&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+  }
+
+
+nav {
+    background-color: #10A6BF;
+    color: #F2F9FF;
+    padding: 10px;
+    font-family: bebas-neue, sans-serif;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.navbar a {
+    background-color: #10A6BF;
+    text-decoration: none;
+    color: #F2F9FF;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Adding a smooth transition */
+}
+
+.navbar a:hover {
+    background-color: #087C8B; /* Changing background color on hover */
+}
+
+
+.navbar {
+    width: 100%;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F2F9FF;
+}
+
+.login button {
+    background-color: #10A6BF;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    width: 40%;
+    margin-top: 20px; /* Add margin-top for the button */
+}
+
+.login button:hover {
+    background-color: #087C8B;
+}
+
+.login input {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid #10A6BF;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: large;
+    width: 40%; /* Set input width */
+}
+
+.login label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: large;
+}
+

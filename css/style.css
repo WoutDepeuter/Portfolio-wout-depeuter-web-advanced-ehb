@@ -10,7 +10,7 @@ nav {
     background-color: #10A6BF;
     color: #F2F9FF;
     padding: 10px;
-font-family: bebas neue, sans-serif;
+    font-family: bebas-neue, sans-serif;
 }
 
 .navbar ul {
@@ -31,6 +31,7 @@ font-family: bebas neue, sans-serif;
 .navbar a:hover {
     background-color: #087C8B; /* Changing background color on hover */
 }
+
 
 .navbar {
     width: 100%;

@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Hier definieer je het aantal kolommen en hun breedtes */
+    gap: 20px; /* Hier stel je de ruimte tussen de grid-items in */
+}
+.grid-item {
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+
