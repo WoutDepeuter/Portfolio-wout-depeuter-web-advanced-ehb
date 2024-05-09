@@ -2,40 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    
-   
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="/css/login.css">
-
 </head>
-<header>
-<nav class="navbar">
-<ul>
-<li><a href="home.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="">linkedin</a></li>
-<Li><a href="Login.html">Login</a></Li>
-</ul>
-</nav>
-</header>
 <body>
 
-    <div class="login">    
-    <h1>login</h1>
-    <form action="login.html">
-    <input type="text"> <label for="login">Gebruikernaam</label>
-    <br>
-    <input type="password"> <label for="Paswoord">Paswoord</label>
-    <br>
-    <button class="login">Login</button>
-    <button class="registreer">registreer</button>
+<header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="login">
+    <p id="msg"></p>
+    <form id="loginForm" action="login.html">
+        <p id ="usernameerror"></p>
+        <input type="text" id="username" placeholder="Username"> 
+        <br>
+        <p id ="passwoorderror"></p>
+        <input type="password" id="password" placeholder="Password"> 
+        <br>
+        <div id="confirmpaswoord"></div>
+        <button type="button" id="login">Login</button>
+        <button type="button" id="register">Register</button>
+    </form>  
 </div>
 
-    </form>
 
-<script src="js/app.js"></script>
+<script src="/js/login.js"></script>
 </body>
 </html>

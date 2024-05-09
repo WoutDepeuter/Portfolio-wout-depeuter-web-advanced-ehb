@@ -53,8 +53,9 @@ nav {
     font-family: 'Bebas Neue', sans-serif;
     font-size: larger;
     font-weight: bold;
-    width: 40%;
+    
     margin-top: 20px; /* Add margin-top for the button */
+    width: auto;
 }
 
 .login button:hover {
@@ -68,11 +69,16 @@ nav {
     border-bottom: 2px solid #10A6BF;
     font-family: 'Bebas Neue', sans-serif;
     font-size: large;
-    width: 40%; /* Set input width */
+    width: 86%; 
+    
 }
-
-.login label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: large;
+#passwoorderror,#usernameerror
+{
+color: red;
+font-family: bebas-neue, sans-serif;
 }
-
+#msg
+{
+color: green;
+font-family: bebas-neue, sans-serif;
+}
