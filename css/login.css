@@ -11,6 +11,7 @@ nav {
     color: #F2F9FF;
     padding: 10px;
     font-family: bebas-neue, sans-serif;
+    position: fixed;
 }
 
 .navbar ul {
@@ -67,7 +68,6 @@ nav {
     margin: 10px;
     border: none;
     border-bottom: 2px solid #10A6BF;
-    font-family: 'Bebas Neue', sans-serif;
     font-size: large;
     width: 86%; 
     
