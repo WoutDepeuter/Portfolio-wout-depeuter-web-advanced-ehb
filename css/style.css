@@ -79,3 +79,19 @@ max-height: 50%;
   height: 50%;
   }
   
+  .moviedetails button {
+    background-color: #10A6BF;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    
+    margin-top: 20px; /* Add margin-top for the button */
+    width: auto;
+}
+
+.moviedetails button:hover {
+    background-color: #087C8B;
+}
