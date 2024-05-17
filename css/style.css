@@ -95,3 +95,27 @@ max-height: 50%;
 .moviedetails button:hover {
     background-color: #087C8B;
 }
+
+button {
+    background-color: #10A6BF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 20px;
+}
+button:hover {
+    background-color: #087C8B;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-bottom: 2px solid #10A6BF;
+  font-size: large;
+  width: 10%; 
+  
+}
