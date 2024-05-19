@@ -94,10 +94,10 @@ function addtoWatchlist(title, id) {
   localStorage.setItem('watchlist', JSON.stringify(watchlist));
 }
 
-function displayWatchlist() {
-  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+// function displayWatchlist() {
+//   let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
   
-}
+// }
 
-// Call displayWatchlist to show the watchlist on page load
-document.addEventListener('DOMContentLoaded', displayWatchlist);
+// // Call displayWatchlist to show the watchlist on page load
+// document.addEventListener('DOMContentLoaded', displayWatchlist);
