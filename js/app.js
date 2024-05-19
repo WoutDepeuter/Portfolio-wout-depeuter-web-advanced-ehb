@@ -40,7 +40,7 @@ function zoeken() {
 
   moviedetails.innerHTML = ""; // Clear previous results
 
-  fetch(`https://api.themoviedb.org/3/search/movie?query=${zoekterm}&include_adult=false&language=en-US&page=${page}&api_key=${apiKey}`, options)
+  fetch(`https://api.themoviedb.org/3/search/movie?query=${zoekterm}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`)
     .then(response => response.json())
     .then(data => {
       data.results.slice(0, 4).forEach(movie => {
@@ -66,7 +66,10 @@ function zoeken() {
 
         let addToWatchlistButton = document.createElement('button');
         addToWatchlistButton.textContent = "Add to watchlist";
-        addToWatchlistButton.addEventListener('click', () => addtoWatchlist(title, id));
+        addToWatchlistButton.addEventListener('click', () => {
+          addtoWatchlist(title, id);
+          displayWatchlist(); // Update watchlist display after adding a movie
+        });
 
         // Append elements to movieDiv
         movieDiv.appendChild(titleElement);
@@ -90,3 +93,11 @@ function addtoWatchlist(title, id) {
   watchlist.push(watchmovie);
   localStorage.setItem('watchlist', JSON.stringify(watchlist));
 }
+
+function displayWatchlist() {
+  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+  
+}
+
+// Call displayWatchlist to show the watchlist on page load
+document.addEventListener('DOMContentLoaded', displayWatchlist);
