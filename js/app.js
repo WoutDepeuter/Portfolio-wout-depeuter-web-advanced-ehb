@@ -40,10 +40,11 @@ function zoeken() {
 
   moviedetails.innerHTML = ""; // Clear previous results
 
-  fetch(`https://api.themoviedb.org/3/search/movie?query=${zoekterm}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`)
+  // Modify the API request URL to include pagination
+  fetch(`https://api.themoviedb.org/3/search/movie?query=${zoekterm}&include_adult=false&language=en-US&page=${page}&api_key=${apiKey}`)
     .then(response => response.json())
     .then(data => {
-      data.results.slice(0, 4).forEach(movie => {
+      data.results.slice(0, 4).forEach(movie => { // Limit to the first 4 results
         let { title, overview, poster_path, id } = movie;
 
         // Create div element for movie
@@ -61,9 +62,6 @@ function zoeken() {
         posterElement.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
         posterElement.alt = `${title} poster`;
 
-        let idElement = document.createElement('h3');
-        idElement.textContent = id;
-
         let addToWatchlistButton = document.createElement('button');
         addToWatchlistButton.textContent = "Add to watchlist";
         addToWatchlistButton.addEventListener('click', () => {
@@ -75,29 +73,18 @@ function zoeken() {
         movieDiv.appendChild(titleElement);
         movieDiv.appendChild(overviewElement);
         movieDiv.appendChild(posterElement);
-        movieDiv.appendChild(idElement);
+
         movieDiv.appendChild(addToWatchlistButton);
 
         moviedetails.appendChild(movieDiv);
       });
+
+      // If there are more results available, enable next page button
+      if (data.total_pages > page) {
+        nextPageButton.disabled = false;
+      } else {
+        nextPageButton.disabled = true;
+      }
     })
     .catch(err => console.error(err));
 }
-
-function addtoWatchlist(title, id) {
-  console.log("title: " + title);
-  console.log("id: " + id);
-
-  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-  let watchmovie = { title, id };
-  watchlist.push(watchmovie);
-  localStorage.setItem('watchlist', JSON.stringify(watchlist));
-}
-
-// function displayWatchlist() {
-//   let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-  
-// }
-
-// // Call displayWatchlist to show the watchlist on page load
-// document.addEventListener('DOMContentLoaded', displayWatchlist);
