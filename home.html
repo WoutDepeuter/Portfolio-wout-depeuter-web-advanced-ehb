@@ -2,52 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    
-   
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
-
 </head>
-<header>
-<nav class="navbar">
-<ul>
-<li><a href="home.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="">linkedin</a></li>
-<Li><a href="Login.html">Login</a></Li>
-</ul>
-</nav>
-</header>
 <body>
-
-<H1>Media tracker </H1>
-<hr>
-<!-- <div class="moviedetails">
-<h2 class="titlesite">Series and tv</h2>
-<div movie details>
-<H1 id="movietitle"></H1>
-<p id="movieoverview"></p>
-<img src="" alt="" id="poster">
-</div> -->
-
-
-
-<div id="moviedetails" class="movielist"></div>
-<hr>
-<div id="buttons">
-<div id="pages">
-<button id="previous">previous</button>
-<button id="next">next</button>
+<header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <hr>
+    <!-- <div class="moviedetails">
+        <h2 class="titlesite">Series and TV</h2>
+        <div movie details>
+            <h1 id="movietitle"></h1>
+            <p id="movieoverview"></p>
+            <img src="" alt="" id="poster">
+        </div>
+    </div> -->
+    <div id="moviedetails" class="movielist"></div>
+ 
+    <div id="buttons" class="buttons-at-bottom">
+        <div id="pages">
+            <button id="previous">Previous</button>
+            <button id="next">Next</button>
+        </div>
+        <input type="text" id="zoekterm" placeholder="Title">
+        <button id="zoekbutton">Search</button>
+        <h3 id="pagenumber"></h3>
+    </div>
+    <hr>
 </div>
-<input type="text" id="zoekterm" placeholder="title">
-<button id="zoekbutton">zoek</button>
-<h3 id="pagenumber"></h3>
-</div>
-<hr>
-<!-- <div id="watchlist"></div>       -->
+<!-- <div id="watchlist"></div> -->
 <script src="js/app.js"></script>
 </body>
 </html>

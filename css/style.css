@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+25&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
-   
-  }
+}
 
-body
-{
-   background-color: #D7DCDF;
+body {
+    background-color: #D7DCDF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 nav {
     background-color: #10A6BF;
     color: #F2F9FF;
     padding: 10px;
-    font-family: bebas-neue, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .navbar ul {
@@ -30,95 +31,86 @@ nav {
     text-decoration: none;
     color: #F2F9FF;
     padding: 10px;
-    transition: background-color 0.3s ease; /* Adding a smooth transition */
+    transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #087C8B; /* Changing background color on hover */
+    background-color: #087C8B;
 }
 
-.moviedetails{
-  width: fit-content;
-    background-color: white;
-    width: 25%;
-    border: 1px solid #10A6BF;
-    height: 25%;
-
-}
-.moviedetails p{
-font-size: 12px;
-font-weight: bold;
-color: #087C8B;
-max-height: 50%;
-}
-
-
-.navbar {
-    width: 100%;
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .moviedetails {
-  width: calc(25% - 20px); /* Calculate width dynamically */
-  margin: 10px; /* Add margin to create space between items */
-  background-color: white;
-  border: 1px solid #10A6BF;
-  height: auto; /* Set height to auto */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-  display: flex;
-  flex-direction: column;
+    width: calc(25% - 20px);
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #10A6BF;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .moviedetails img {
-  max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+    max-width: 100%;
 }
 
 .moviedetails p {
-  font-size: 12px;
-  font-weight: bold;
-  color: #087C8B;
+    font-size: 12px;
+    font-weight: bold;
+    color: #087C8B;
 }
 
 .moviedetails button {
-  background-color: #10A6BF;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: larger;
-  font-weight: bold;
-  margin-top: auto; /* Align the button to the bottom */
-  width: 100%; /* Make button full width */
+    background-color: #10A6BF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: auto;
+    width: 100%;
 }
 
 .movielist {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Align items with space between them */
-  padding: 0 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px;
 }
 
-.buttons{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  flex-direction: column;
-
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+    flex-direction: row-reverse;
+  
 }
+
 #buttons {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
+    display: flex;
+    align-items: center;  
+    background-color: #087C8B;
+   align-content: flex-end;
 }
 
 #pages {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
+    display: flex;
+    
+    align-items: center;
+    ;
 }
 
 #buttons button,
 #buttons input[type="text"] {
-  margin-right: 10px; 
+    margin-right: 10px;
 }
 
 button {
@@ -131,16 +123,24 @@ button {
     font-weight: bold;
     margin-top: 20px;
 }
+
 button:hover {
     background-color: #087C8B;
 }
 
 input {
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  border-bottom: 2px solid #10A6BF;
-  font-size: large;
-  width: 10%; 
-  
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid #10A6BF;
+    font-size: large;
+    width: 10%;
+}
+
+.buttons-at-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    align-content: flex-end;
 }

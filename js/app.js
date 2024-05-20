@@ -65,7 +65,7 @@ function zoeken() {
         let addToWatchlistButton = document.createElement('button');
         addToWatchlistButton.textContent = "Add to watchlist";
         addToWatchlistButton.addEventListener('click', () => {
-          addtoWatchlist(title, id);
+          addtoWatchlist(title, id); 
           displayWatchlist(); // Update watchlist display after adding a movie
         });
 
@@ -87,4 +87,15 @@ function zoeken() {
       }
     })
     .catch(err => console.error(err));
+}
+
+addtoWatchlist = (title, id) => {
+  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+  if (!watchlist.some(movie => movie.id === id)) {
+    watchlist.push({ title, id });
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
+  }
+}
+displayWatchlist = () => {
 }
