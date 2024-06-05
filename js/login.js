@@ -21,7 +21,7 @@ function loginHandler() {
         let user = users.find(user => user.username === username && user.password === password);
 
         if (user) {
-            console.log("Login successful");
+            console.log("Login gelukt");
             window.location.href = "home.html";
         } else {
             usernameError.innerHTML = "Username or password is incorrect";
@@ -51,7 +51,7 @@ function registerHandler() {
     let userExists = users.some(user => user.username === username);
 
     if (userExists) {
-        usernameError.innerHTML = "Username already exists";
+        usernameError.innerHTML = "Username bestaat all";
     } else {
         let newUser = {
             username: username,

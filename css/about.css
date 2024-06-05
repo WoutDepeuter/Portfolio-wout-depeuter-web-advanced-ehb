@@ -1,37 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+25&display=swap');
 
+:root {
+    --primary-color: #10A6BF;
+    --secondary-color: #087C8B;
+    --background-color: #808787;
+    --text-color: #000d19;
+    --font-primary: 'Bebas Neue', sans-serif;
+    --font-secondary: 'Jersey 25', sans-serif;
+    --border-radius: 8px;
+    --transition-duration: 0.3s;
+}
+
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    color: var(--text-color);
 }
 
 nav {
-  background-color: #10A6BF;
-  color: #F2F9FF;
-  padding: 10px;
-  font-family: bebas-neue, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px;
+    text-align: center;
 }
 
 .navbar ul {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    gap: 20px;
 }
 
 .navbar a {
-  background-color: #10A6BF;
-  text-decoration: none;
-  color: #F2F9FF;
-  padding: 10px;
-  transition: background-color 0.3s ease; /* Adding a smooth transition */
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+    border-radius: var(--border-radius);
 }
 
 .navbar a:hover {
-  background-color: #087C8B; /* Changing background color on hover */
+    background-color: var(--secondary-color);
+    color: var(--background-color);
 }
-
-.navbar {
-  width: 100%;
-}
-
