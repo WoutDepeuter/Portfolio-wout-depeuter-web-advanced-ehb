@@ -3,8 +3,8 @@
 :root {
     --primary-color: #10A6BF;
     --secondary-color: #087C8B;
-    --background-color: #808787;
-    --text-color: #000d19;
+    --background-color: #121212;
+    --text-color: #E0E0E0;
     --font-primary: 'Bebas Neue', sans-serif;
     --font-secondary: 'Jersey 25', sans-serif;
     --border-radius: 8px;
@@ -75,7 +75,7 @@ h1 {
 }
 
 .moviedetails {
-    background-color: white;
+    background-color: #1E1E1E;
     border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
     width: 300px;

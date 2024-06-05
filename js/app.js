@@ -35,6 +35,7 @@ searchButton.addEventListener('click', () => {
   zoeken();
 });
 window.onload = zoeken;
+
 function zoeken() {
   let zoekterm = document.getElementById('zoekterm').value.trim();
   let moviedetails = document.getElementById('moviedetails');
@@ -126,7 +127,7 @@ function zoeken() {
   }
 }
 
-function addtoWatchlist(title, id) {
+function voegtoeaanlijst(title, id) {
   let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
   if (!watchlist.some(movie => movie.id === id)) {
@@ -136,5 +137,12 @@ function addtoWatchlist(title, id) {
 }
 
 function displayWatchlist() {
-  // Function implementation to display watchlist
+  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+  
+  watchlist.forEach(movie => {
+    let i = 0;
+    i++;
+        console.log(i)
+        console.log(movie.title);
+  });
 }
