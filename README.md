@@ -1,5 +1,9 @@
-## portfolio wout
+# portfolio wout
 
-## watchlist
+# watchlist
+met TMDB API
+
+gebruikte functies
+
 
 ## 
