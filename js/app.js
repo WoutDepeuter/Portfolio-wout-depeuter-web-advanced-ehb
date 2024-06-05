@@ -46,7 +46,7 @@ function zoeken() {
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`)
       .then(response => response.json())
       .then(data => {
-        data.results.slice(0, 5).forEach(movie => {
+        data.results.slice(0, 4).forEach(movie => {
           let { title, overview, poster_path, id } = movie;
 
           let movieDiv = document.createElement('div');
