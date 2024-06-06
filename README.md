@@ -250,7 +250,6 @@ toon,t wat er op de watchlist staat
 
 ## quotes.js
 
-Here are the examples of the listed concepts found in the provided `fetch` code:
 
 - **Fetch om data op te halen:**
   ```javascript
