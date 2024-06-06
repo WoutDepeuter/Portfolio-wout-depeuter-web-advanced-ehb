@@ -209,3 +209,20 @@ input[type="text"]:focus {
     padding: 10px;
     text-align: center;
 }
+
+.quote-box {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .quote-text {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .quote-author {
+    font-style: italic;
+    font-size: 18px;
+  }
