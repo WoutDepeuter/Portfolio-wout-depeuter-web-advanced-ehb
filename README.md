@@ -2,9 +2,8 @@
 
 # watchlist
 met TMDB API
-https://developer.themoviedb.org/reference/intro/getting-started
-
+[documentatie]https://developer.themoviedb.org/reference/intro/getting-started
 gebruikte functies
 
 
-## 
+#
