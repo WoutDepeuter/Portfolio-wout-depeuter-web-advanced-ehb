@@ -34,36 +34,34 @@ searchButton.addEventListener('click', () => {
   zoeken();
 });
 
-window.onload = () => {
-  fetchGenres();
-  zoeken();
+
+
+window.onload = async () => {
+  await fetchGenres();
+   await zoeken();
 };
 
 const genreSelect = document.getElementById('genre');
 
-function fetchGenres() {
+async function fetchGenres() {
   const genreUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`;
 
-  fetch(genreUrl, options)
-    .then(response => response.json())
-    .then(data => {
-      data.genres.forEach(genre => {
-        let option = document.createElement('option');
-        option.value = genre.id;
-        option.textContent = genre.name;
-        genreSelect.appendChild(option);
-      });
-    })
-    .catch(err => console.error(err));
+  try {
+    const response = await fetch(genreUrl, options);
+    const data = await response.json();
+    
+    data.genres.forEach(genre => {
+      let option = document.createElement('option');
+      option.value = genre.id;
+      option.textContent = genre.name;
+      genreSelect.appendChild(option);
+    });
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-genreSelect.addEventListener('change', () => {
-  page = 1;
-  pagenumber.textContent = page;
-  zoeken();
-});
-
-function zoeken() {
+async function zoeken() {
   let zoekterm = document.getElementById('zoekterm').value.trim();
   let selectedGenre = genreSelect.value;
   let moviedetails = document.getElementById('moviedetails');
@@ -84,78 +82,61 @@ function zoeken() {
     }
   }
 
-  fetch(url, options)
-    .then(response => response.json())
-    .then(data => {
-      data.results.slice(0, 4).forEach(movie => {
-        let { title, overview, poster_path, id } = movie;
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
 
-        let movieDiv = document.createElement('div');
-        movieDiv.classList.add('moviedetails');
+    data.results.slice(0, 4).forEach(movie => {
+      let { title, overview, poster_path, id } = movie;
 
-        let titleElement = document.createElement('h2');
-        titleElement.textContent = title;
+      let movieDiv = document.createElement('div');
+      movieDiv.classList.add('moviedetails');
 
-        let posterElement = document.createElement('img');
-        if (poster_path) {
-          posterElement.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
-        } else {
-          posterElement.src = 'https://via.placeholder.com/200x300?text=No+Image';
-        }
-        posterElement.alt = `${title} poster`;
+      let titleElement = document.createElement('h2');
+      titleElement.textContent = title;
 
-        let addToWatchlistButton = document.createElement('button');
+      let posterElement = document.createElement('img');
+      if (poster_path) {
+        posterElement.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
+      } else {
+        posterElement.src = 'https://via.placeholder.com/200x300?text=No+Image';
+      }
+      posterElement.alt = `${title} poster`;
+
+      let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+      let isAdded = watchlist.some(movie => movie.id === id);
+
+      let addToWatchlistButton = document.createElement('button');
+      if (isAdded) {
+        addToWatchlistButton.textContent = "Already Added";
+        addToWatchlistButton.style.backgroundColor = "green"; // Change button color
+        addToWatchlistButton.disabled = true; // Disable button
+      } else {
         addToWatchlistButton.textContent = "Add to watchlist";
         addToWatchlistButton.addEventListener('click', () => {
           addtoWatchlist(title, id);
           displayWatchlist();
         });
+      }
 
-        movieDiv.appendChild(titleElement);
-        movieDiv.appendChild(posterElement);
-        movieDiv.appendChild(addToWatchlistButton);
-        moviedetails.appendChild(movieDiv);
-      });
+      movieDiv.appendChild(titleElement);
+      movieDiv.appendChild(posterElement);
+      movieDiv.appendChild(addToWatchlistButton);
+      moviedetails.appendChild(movieDiv);
+    });
 
-      nextPageButton.disabled = data.total_pages <= page;
-    })
-    .catch(err => console.error(err));
+    nextPageButton.disabled = data.total_pages <= page;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 function addtoWatchlist(title, id) {
   let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
   if (!watchlist.some(movie => movie.id === id)) {
-    watchlist.push({ title, id });
+    watchlist.push({ title, id , watched: false});
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
   }
 }
 
-function displayWatchlist() {
-  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-  let watchlistContainer = document.getElementById('watchlist');
-  
-  watchlistContainer.innerHTML = ""; 
-
-  watchlist.forEach(movie => {
-    let watchlistElement = document.createElement('li');
-    watchlistElement.textContent = movie.title;
-
-    let removeFromWatchlistButton = document.createElement('button');
-    removeFromWatchlistButton.textContent = "Remove from watchlist";
-    removeFromWatchlistButton.classList.add('small-button');
-    removeFromWatchlistButton.addEventListener('click', () => {
-      removeFromWatchlist(movie.id);
-      displayWatchlist();
-    });
-
-    watchlistElement.appendChild(removeFromWatchlistButton);
-    watchlistContainer.appendChild(watchlistElement);
-  });
-}
-
-function removeFromWatchlist(id) {
-  let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-  watchlist = watchlist.filter(movie => movie.id !== id);
-  localStorage.setItem('watchlist', JSON.stringify(watchlist));
-}

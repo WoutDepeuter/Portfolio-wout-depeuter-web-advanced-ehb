@@ -7,8 +7,8 @@ loginBtn.addEventListener('click', loginHandler);
 function loginHandler() {
     let storedRegistrationInfo = localStorage.getItem('registrationInfo');
     if (storedRegistrationInfo) {
-        let registrationInfo = JSON.parse(storedRegistrationInfo);
-        let users = registrationInfo.users || []; 
+        const registrationInfo = JSON.parse(storedRegistrationInfo);
+        const users = registrationInfo.users || []; 
 
         let username = document.getElementById('username').value;
         let password = document.getElementById('password').value;

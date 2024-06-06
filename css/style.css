@@ -199,3 +199,13 @@ input[type="text"]:focus {
         opacity: 1;
     }
 }
+#watchlist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.movie {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
