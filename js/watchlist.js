@@ -1,5 +1,6 @@
 // watchlist.js
 
+//
 window.onload = () => {
     displayWatchlist();
 
@@ -33,6 +34,7 @@ window.onload = () => {
         });
     }
 
+    //
     function removeFromWatchlist(id) {
         let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
         watchlist = watchlist.filter(movie => movie.id !== id);

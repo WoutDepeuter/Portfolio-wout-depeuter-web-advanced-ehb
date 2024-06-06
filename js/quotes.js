@@ -1,4 +1,4 @@
-fetch('quotes.json')
+fetch('js/quotes.json')
             .then(response => response.json())
             .then(data => {
                

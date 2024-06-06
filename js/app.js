@@ -34,8 +34,7 @@ searchButton.addEventListener('click', () => {
   zoeken();
 });
 
-
-
+//async function 
 window.onload = async () => {
   await fetchGenres();
    await zoeken();
