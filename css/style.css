@@ -178,4 +178,12 @@ input[type="text"]:focus {
     align-items: center;
     padding: 20px;
 }
+.small-button {
+    padding: 5px 10px; /* Smaller padding */
+    font-size: medium; /* Smaller font size */
+    width: auto; /* Ensure it doesn't take full width */
+}
 
+.small-button:hover {
+    transform: scale(1.05);
+}
